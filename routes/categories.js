@@ -13,7 +13,7 @@ router.post("/add", async (req, res) => {
   }
 });
 
-//this Rout to Get all Category
+//this Rout to Get all Categories
 router.get("/", async (req, res) => {
     try {
       const cats = await Category.find();
