@@ -1,14 +1,16 @@
+require('dotenv').config()
 const express = require ("express");
 const app = express ();
-const dotenv = require("dotenv");
+
 const mongoose = require("mongoose");
 
 
 
+const PORT = process.env.PORT;
 
 
 
-dotenv.config();         //to use env file
+
 app.use(express.json()); //to can use sent the data as json format 
 
 
@@ -27,6 +29,10 @@ mongoose
 
 
 
-app.listen("5000", () => {
-    console.log("Hello from Backend .");
+
+
+  // Listen for HTTP request on PORT 4000
+app.listen(PORT, () => {
+
+    console.log(`Hello from Backend   PORT Number is  ${PORT}`);
   });
