@@ -2,9 +2,9 @@ require('dotenv').config()
 const express = require ("express");
 const app = express ();
 const mongoose = require("mongoose");
-const postRouter = require('./routes/posts');
+const postRoute = require('./routes/posts');
+const categoryRoute = require("./routes/categories");
 
-const postRoute = require("./routes/posts");
 
 
 
@@ -33,6 +33,7 @@ mongoose
 
 
   app.use("/blog/v1/posts", postRoute);
+  app.use("/blog/v1/categories", categoryRoute);
 
   // Listen for HTTP request 
 app.listen(PORT, () => {
