@@ -8,7 +8,7 @@ const PostSchema = new mongoose.Schema(
     },
     desc: {
       type: String,
-      required: true,
+      //required: true,
     },
     photo: {
       type: String,
@@ -16,7 +16,7 @@ const PostSchema = new mongoose.Schema(
     },
     username: {//to know who is the auther for the post
       type: String,
-      required: true,
+      //required: true,
     },
     categories: {
       type: Array,
