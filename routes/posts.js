@@ -3,7 +3,7 @@ const { get } = require('mongoose');
 const router = express.Router();
 const Post = require('../models/Post')
 
-// /blog/v1/posts
+// /blog/v1/posts/
 
 // Show all posts
 router.get('/', async (req, res) => {
