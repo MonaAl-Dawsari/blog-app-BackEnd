@@ -14,7 +14,7 @@ const PostSchema = new mongoose.Schema(
       type: String,
       required: false,
     },
-    username: {//to know who is the aither for the post
+    username: {//to know who is the auther for the post
       type: String,
       //required: true,
     },
