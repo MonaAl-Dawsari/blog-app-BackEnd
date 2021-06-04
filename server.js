@@ -2,6 +2,7 @@ const express = require ("express");
 const app = express ();
 const dotenv = require("dotenv");
 const mongoose = require("mongoose");
+const postRouter = require('./routes/posts');
 
 
 
@@ -25,6 +26,19 @@ mongoose
   .then(console.log("Connected to MongoDB"))
   .catch((err) => console.log(err));
 
+
+
+
+
+  app.get('/', (req, res)=>{
+      res.json({message: "Heello World"})
+  })
+
+
+
+
+
+  app.use("/blog/v1/posts" , postRouter)
 
 
 app.listen("5000", () => {
