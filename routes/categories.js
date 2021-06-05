@@ -3,7 +3,7 @@ const Category = require("../models/Category");
 
 
 //this Rout to add a new Category
-router.post("/add", async (req, res) => {
+router.post("/", async (req, res) => {
   const newCat = new Category(req.body);
   try {
     const savedCat = await newCat.save();
