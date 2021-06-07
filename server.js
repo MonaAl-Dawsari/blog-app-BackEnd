@@ -2,10 +2,8 @@ require('dotenv').config()
 const express = require ("express");
 const app = express ();
 const mongoose = require("mongoose");
-const postRouter = require('./routes/posts');
-
-const postRoute = require("./routes/posts");
-
+const postRoute = require('./routes/posts');
+const cors = require('cors');
 
 
 
@@ -15,6 +13,7 @@ const PORT = process.env.PORT;
 
 
 app.use(express.json()); //to can use sent the data as json format 
+app.use(cors()); 
 
 
 
