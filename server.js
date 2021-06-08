@@ -7,7 +7,7 @@ const cors = require('cors');
 const categoryRoute = require("./routes/categories");
 const authRoute = require("./routes/auth");
 const userRoute = require("./routes/users");
-// const commentRoute = require("./routes/comment");
+const commentRoute = require("./routes/comment");
 const multer = require("multer");//multer for upload files
 const path = require("path");
 
@@ -64,7 +64,8 @@ app.use("/auth", authRoute);
 app.use("/users", userRoute);
 app.use("/blog/v1/posts", postRoute);
 app.use("/blog/v1/categories", categoryRoute);
-// app.use("/comment", commentRoute);
+app.use("/comment", commentRoute);
+
 
 // Listen for HTTP request PORT
 app.listen(PORT, () => {
