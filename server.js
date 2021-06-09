@@ -1,6 +1,9 @@
-require('dotenv').config()
+require('dotenv').config();
+//const cors = require('cors');
 const express = require("express");
 const app = express();
+// Import the library:
+var cors = require('cors');
 const mongoose = require("mongoose");
 const postRoute = require('./routes/posts');
 const cors = require('cors');
@@ -11,7 +14,8 @@ const commentRoute = require("./routes/comment");
 const multer = require("multer");//multer for upload files
 const path = require("path");
 
-
+// Then use it before your routes are set up:
+app.use(cors());
 app.use(express.json());
 
 app.use("/images", express.static(path.join(__dirname, "/images")));
@@ -32,6 +36,7 @@ mongoose
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useCreateIndex: true,
+    useFindAndModify: true,
     useFindAndModify: true
   })
   .then(console.log("Connected to MongoDB"))
