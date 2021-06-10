@@ -38,21 +38,26 @@ router.post("/login", async (req, res) => {
 });
 
 
-// change password 
-router.put('/changePass/:id' , protectRoute, async(req,res)=>{
-  try{
+// change password //
+router.put('/changePass/:id', async (req, res) => {
+  try {
     const userId = req.params.id
-    const user =await User.findById(userId)
-    if (bcrypt.compareSync(req.body.oldPassword , user.password)){
+    let user = await User.findById(userId)
+    if (bcrypt.compareSync(req.body.oldPassword, user.password)) {
       let salt = bcrypt.genSaltSync()
-      let hash = bcrypt.hashSync(req.body.newPassword , salt)
-      await user.findByIdAndUodate (userId ,{password: hash})
-      res.json({message: "password chane successflly!"})
-    }else{
-      throw new Error ("Password incorrect")
+      let hash = bcrypt.hashSync(req.body.newPassword, salt)
+      //await user.findOneAndUpdate (userId ,{password: hash})
+
+      const filter = { _id: userId };
+      const update = { password: hash };
+      await User.findOneAndUpdate(filter, update);
+
+      res.json({ message: "password chane successflly!" })
+    } else {
+      throw new Error("Password incorrect")
     }
-  }catch(err){
-    res.status(400).json({name: err.name , message: err.message , url: req.originalUrl})
+  } catch (err) {
+    res.status(400).json({ name: err.name, message: err.message, url: req.originalUrl })
   }
 })
 
