@@ -1,6 +1,7 @@
 const router = require("express").Router();
 const User = require("../models/User");
 const bcrypt = require('bcryptjs');
+const protectRoute = require("../util/protectRoute")
 
 //register router
 router.post("/register", async (req, res) => {
@@ -35,5 +36,24 @@ router.post("/login", async (req, res) => {
     res.status(500).json(err);
   }
 });
+
+
+// change password 
+router.put('/changePass/:id' , protectRoute, async(req,res)=>{
+  try{
+    const userId = req.params.id
+    const user =await User.findById(userId)
+    if (bcrypt.compareSync(req.body.oldPassword , user.password)){
+      let salt = bcrypt.genSaltSync()
+      let hash = bcrypt.hashSync(req.body.newPassword , salt)
+      await user.findByIdAndUodate (userId ,{password: hash})
+      res.json({message: "password chane successflly!"})
+    }else{
+      throw new Error ("Password incorrect")
+    }
+  }catch(err){
+    res.status(400).json({name: err.name , message: err.message , url: req.originalUrl})
+  }
+})
 
 module.exports = router;

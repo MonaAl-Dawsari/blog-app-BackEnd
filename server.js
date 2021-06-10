@@ -13,6 +13,7 @@ const userRoute = require("./routes/users");
 const commentRoute = require("./routes/comment");
 const multer = require("multer");//multer for upload files
 const path = require("path");
+const protectRoute = require("./util/protectRoute")
 
 // Then use it before your routes are set up:
 app.use(cors());
