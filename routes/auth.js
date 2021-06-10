@@ -52,7 +52,7 @@ router.put('/changePass/:id', async (req, res) => {
       const update = { password: hash };
       await User.findOneAndUpdate(filter, update);
 
-      res.json({ message: "password chane successflly!" })
+      res.json({ message: "password change successflly!" })
     } else {
       throw new Error("Password incorrect")
     }
