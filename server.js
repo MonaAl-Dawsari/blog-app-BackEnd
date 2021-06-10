@@ -3,14 +3,17 @@ require('dotenv').config();
 const express = require("express");
 const app = express();
 // Import the library:
-var cors = require('cors');
+
 const mongoose = require("mongoose");
 const postRoute = require('./routes/posts');
+const cors = require('cors');
 const categoryRoute = require("./routes/categories");
 const authRoute = require("./routes/auth");
 const userRoute = require("./routes/users");
+const commentRoute = require("./routes/comment");
 const multer = require("multer");//multer for upload files
 const path = require("path");
+const protectRoute = require("./util/protectRoute")
 
 // Then use it before your routes are set up:
 app.use(cors());
@@ -22,7 +25,8 @@ const PORT = process.env.PORT;
 
 
 
-// app.use(express.json()); //to can use sent the data as json format 
+app.use(express.json()); //to can use sent the data as json format 
+
 
 
 
@@ -66,6 +70,8 @@ app.use("/auth", authRoute);
 app.use("/users", userRoute);
 app.use("/blog/v1/posts", postRoute);
 app.use("/blog/v1/categories", categoryRoute);
+app.use("/comment", commentRoute);
+
 
 // Listen for HTTP request PORT
 app.listen(PORT, () => {

@@ -2,6 +2,10 @@ const router = require("express").Router();
 const User = require("../models/User");
 const Post = require("../models/Post");
 
+
+
+// /blog/v1/posts/
+
 //Create New Post
 router.post("/create", async (req, res) => {
     const newPost = new Post(req.body);
@@ -42,7 +46,6 @@ router.post("/create", async (req, res) => {
 
 
 
-// /blog/v1/posts/
 
 // Show all posts
 
