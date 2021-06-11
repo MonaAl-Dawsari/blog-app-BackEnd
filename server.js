@@ -52,8 +52,8 @@ const storage = multer.diskStorage({
   },
   //the file name will be the same one comming from user
   filename: (req, file, callback) => {
-    callback(null, "Hello.png");// hardcoded because i used post man
-    // callback(null, req.body.name); //In react we will use this
+    //callback(null, "Hello.png");// hardcoded because i used post man
+     callback(null, req.body.name); //In react we will use this
 
   },
 });
