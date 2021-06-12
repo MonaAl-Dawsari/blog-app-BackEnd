@@ -13,7 +13,7 @@ Blog technology application that gathers group of people who has the same intere
 ## Planning Story
 
 ### ER Diagram
-![ ](images/ER.png)
+![ ](./images/ER.png)
 ### User Stories 
 1. As a user, I want to be able to sign up with my Email address. so I can create a new post.
 2. As a user, I want to Login to explore the posts of my friends and Logout after I am done.
@@ -25,7 +25,7 @@ Blog technology application that gathers group of people who has the same intere
 ```
 1. npm i // to install all the packages
 2. npm start  // to run the backend
-3. Use PostMan to teat the api
+3. Use PostMan to test the api
 ```
 ## Future Feachers
 * Add new categories by the User
