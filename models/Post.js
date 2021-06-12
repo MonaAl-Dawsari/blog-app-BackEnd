@@ -12,6 +12,7 @@ const PostSchema = new mongoose.Schema(
     },
     photo: {
       type: String,
+      default: "1623497349113blogpic.jpg"
       
     },
     username: {//to know who is the auther for the post
