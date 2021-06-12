@@ -1,9 +1,13 @@
 # Description (H3ROES Blog App)
 It's simply a Blog application that gathers SEI15 students and allows us to share knowledge, experience and interests in different fields.[Join Us!]()
+
+
 **Team Members**
 * Ahoud kensara
 * Mona alsaiqal
 * Mona aldawsari
+
+
 ### Important Links:
 - [Frontend repo](https://git.generalassemb.ly/alsaiqal/blog-app-frontend2)
 - [Deployed API]() 
