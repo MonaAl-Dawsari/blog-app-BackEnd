@@ -13,7 +13,7 @@ Blog technology application that gathers group of people who has the same intere
 ## Planning Story
 
 ### ER Diagram
-![ ](./images/ER.png)
+![ERD ](./images/ER.PNG)
 ### User Stories 
 1. As a user, I want to be able to sign up with my Email address. so I can create a new post.
 2. As a user, I want to Login to explore the posts of my friends and Logout after I am done.
